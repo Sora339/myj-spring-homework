@@ -33,12 +33,11 @@ export default function Page() {
 
         toast.success("投稿に成功しました", {id: "0"})
 
-        router.push("/");
-        router.refresh();
-
         setTimeout(() => {
             toast.remove();
-          }, 1000);
+            router.push("/");
+            router.refresh();
+          }, 500);
     }
   return (
     <>

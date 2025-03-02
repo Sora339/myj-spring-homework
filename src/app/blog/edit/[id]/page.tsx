@@ -56,12 +56,11 @@ export default function Page() {
 
     toast.success("編集に成功しました", { id: "1" });
 
-    router.push("/");
-    router.refresh();
-
     setTimeout(() => {
       toast.remove();
-    }, 1000);
+      router.push("/");
+      router.refresh();
+    }, 500);
   };
 
   const hundleDelete = async (e: React.MouseEvent) => {
@@ -69,12 +68,11 @@ export default function Page() {
     await deleteBlog(params.id as string);
     toast.success("削除に成功しました", { id: "2" });
 
-    router.push("/");
-    router.refresh();
-
     setTimeout(() => {
       toast.remove();
-    }, 1000);
+      router.push("/");
+      router.refresh();
+    }, 500);
   }
 
   useEffect(() => {
